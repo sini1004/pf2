@@ -1,0 +1,223 @@
+body{
+  font-family: 'Noto Sans KR', sans-serif;
+  padding-left: 200px;
+}
+header {
+  position: fixed;
+  width: 200px;
+  z-index: 2; /**/
+  height: 100%;
+  background: #fff;
+  box-shadow: 2px 0px 12px #efefef;
+  left: 0;
+}
+
+header::before{
+  content: "";
+  position: absolute;
+  width: 100%;
+  top: 29px;
+  left: 0;
+  z-index: 1;
+}
+header div.inner{
+  display: flex;    
+  justify-content: space-between;
+  height: 100%;
+  align-items: center;
+  margin-top: 20px;
+  position: relative;
+  padding: 45px 0;
+  box-sizing: border-box;
+}
+header .inner,
+header .inner>*{
+    /*! border: 1px solid #333; */
+}
+header .inner { 
+  
+}
+header .inner h1 {
+    
+}
+header .inner h1 a {    
+  background-image: url(../img/logo-pc.png);
+  width: 142px;
+  height: 35px;
+  display: block;
+  font-size: 0;
+}
+header .inner ul.gnb {    
+  flex-flow: column;
+  /*! width: 1000px; */
+  align-items: center;
+  align-self: flex-start;
+  padding-left: 25px;
+  box-sizing: border-box;
+}
+header .inner ul.gnb::hover{  
+  width: 1000px;
+}
+header .inner ul.gnb::before{
+  content: "";
+  background-color: #fff;
+  width: 0px;
+  height: 100%;
+  position: absolute;
+  top: -20px;
+  left: -2.6%;
+  z-index: -1;
+  transition: all 1s;
+}
+header .inner ul.gnb:hover::after{  
+/*   top: 110px; */
+  content: "";
+  width: 0px;
+  height: 100%;
+  position: absolute;
+/*   left: -2.6%; */
+  z-index: -1;
+/*   border-top: 1px solid #e7e7e7; */
+}
+header .inner ul.gnb:hover::before{  
+/*   height: 550px; */
+  width: 1000px;
+  display: block;
+  transition: all 0.6s;
+}
+header .inner ul.gnb>li {    
+  display: flex;
+  align-items: flex-start;
+}
+header .inner ul.gnb>li h2 {
+  width: 170px;
+}
+header .inner ul.gnb>li>h2 a {    
+  font-weight: 400;
+  font-size: 18px;
+  display: block;
+  /*! position: relative; */
+  padding: 32px 0;
+}
+header .inner ul.gnb>li:hover>h2 a{
+  color: #e0462e;
+}
+header .inner ul.gnb>li>h2 a::after{  
+  content: "";
+  display: block;
+  width: calc(100% - 90px);
+  height: 2px;
+  background-color: #e0462e;
+  position:absolute;
+  transform: translateY(15px) scaleX(0);
+  transition: all 0.5s;
+}
+header .inner ul.gnb>li:hover>h2 a::after{
+  content: "";
+  display: block;
+  width: calc(100% - 90px);
+  height: 2px;
+  background-color: #e0462e;
+  position:absolute;
+  transform: translateY(15px) scaleX(100%);
+  /*! left: 40px; */
+}
+/* gnb 서브메뉴 */
+header .inner ul.gnb li ul.gnbsub{
+  display: none;
+/*   display: flex; */
+  gap: 15px;
+  justify-items: center;
+  align-items: center;
+  padding: 3px 0;
+  box-sizing: border-box;
+  width: 780px;
+}
+header .inner ul.gnb:hover li ul.gnbsub{
+  display: flex;
+}
+header .inner ul.gnb:hover ul.gnbsub{
+  opacity: 0;
+  animation-name:gnbFadeIn;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-delay: 0.8s;
+  margin-top: 30px;
+}
+@keyframes gnbFadeIn{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+header .inner ul.gnb li ul.gnbsub li{
+  display: flex;
+  /*! flex-direction: row; */
+}
+header .inner ul.gnb li ul.gnbsub li a{
+  /*! padding: 0 0 0 40px; */
+}
+header .inner ul.gnb li ul.gnbsub li a:hover{
+  color: #e0462e;
+}
+
+header .inner ul.enb {
+  display: flex;
+  gap: 15px;
+  position: absolute;
+  top: 55px;
+  right: calc(-1902px + 230px);
+}
+header .inner ul.enb li {
+}
+header .inner ul.enb li select { 
+  background-color: transparent;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+}
+header .inner ul.enb li select option {
+}
+header .inner ul.enb li a{
+  font-size:0;
+  width: 25px;
+  height: 17px;
+  display: flex;
+  align-items: center;
+  border-top: 2px solid #000;
+  border-bottom: 2px solid #000;
+} 
+header .inner ul.enb li a:hover{
+  border-bottom-color: #e0462e;
+}
+header .inner ul.enb li a::before{
+  content: ""; 
+  width: 100%;
+  display: block;   
+  border-top: 2px solid #000;
+} 
+header .inner ul.enb li a:hover::before{
+  background-color: #e0462e;
+}
+header .inner ul.tnb{
+  display: flex;
+  gap: 10px;
+}
+header .inner ul.tnb li{
+}
+header .inner ul.tnb li a{
+  font-size: 12px;
+}
+header .inner ul.tnb li a::after{
+  content: "";
+  background-image: url(../img/open.svg);
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+  vertical-align: -5px;
+}
+
+
